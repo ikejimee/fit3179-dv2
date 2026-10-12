@@ -1,0 +1,108 @@
+:root {
+  --ink: #1d2b24;
+  --muted: #5c6b63;
+  --accent: #2c7fb8;
+  --accent-deep: #253494;
+  --bg: #fbfaf7;
+  --card: #ffffff;
+  --line: #e7e4dc;
+  --maxw: 960px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* ---- Layout ---- */
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header.hero {
+  background: linear-gradient(160deg, #0b3d2e 0%, #1b6b4f 60%, #2c7fb8 100%);
+  color: #fff;
+  padding: 72px 20px 60px;
+  text-align: center;
+}
+header.hero h1 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin: 0 0 12px;
+  line-height: 1.1;
+}
+header.hero p {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #e7f3ee;
+}
+.byline {
+  margin-top: 22px;
+  font-size: 0.85rem;
+  color: #bfe0d2;
+  letter-spacing: 0.03em;
+}
+
+section.block {
+  padding: 46px 0 10px;
+}
+section.block h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.6rem;
+  margin: 0 0 6px;
+  color: var(--accent-deep);
+}
+section.block .lede {
+  color: var(--muted);
+  margin: 0 0 22px;
+  max-width: 680px;
+}
+
+/* ---- Chart cards ---- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  margin-bottom: 8px;
+}
+.chart { width: 100%; }
+
+.note {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+/* ---- Footer ---- */
+footer {
+  margin-top: 50px;
+  background: #11261f;
+  color: #cdddd4;
+  padding: 40px 20px 60px;
+  font-size: 0.85rem;
+}
+footer h3 {
+  font-family: "Fraunces", Georgia, serif;
+  color: #fff;
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+footer a { color: #8fd3b6; }
+footer ul { padding-left: 18px; margin: 6px 0 18px; }
+
+/* divider */
+.rule { height: 1px; background: var(--line); border: 0; margin: 10px 0 0; }

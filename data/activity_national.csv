@@ -1,0 +1,143 @@
+activity,rate,male,female
+Adventure racing,0.072,0.086,0.051
+Air sports,0.224,0.313,0.14
+Archery,0.179,0.243,0.119
+"Athletics, track and field",1.318,1.739,0.921
+Australian football,2.417,3.807,1.084
+Badminton,1.886,2.227,1.559
+Baseball,0.309,0.467,0.159
+Basketball,4.526,6.836,2.303
+Baton twirling,0.012,0.015,0.008
+Biathlon,0.006,0.012,0
+Billiards/Snooker/Pool,0.304,0.425,0.189
+BMX,0.028,0.032,0.025
+Bobsledding,0.002,0,0.004
+Bocce/Boules,0.014,0.013,0.015
+Boccia,0,0,0
+Body building,0.041,0.076,0.008
+Boomerang throwing,0.015,0.031,0
+Bowls,0.834,1.11,0.575
+Boxing,0.848,0.972,0.728
+Broomball,0.002,0,0.005
+Bush walking,17.468,16.302,18.6
+Calisthenics,0.359,0.557,0.171
+Campdrafting,0.013,0.005,0.021
+Canoeing/Kayaking,0.997,1.034,0.959
+Circus,0.034,0.01,0.057
+Cricket,2.492,4.249,0.796
+Croquet,0.088,0.072,0.105
+Crossfit/Functional fitness,0.648,0.547,0.747
+Curling,0.01,0.011,0.009
+Cycling,8.294,10.432,6.252
+DanceSport,1.123,0.276,1.916
+Dancing (recreational),1.629,0.491,2.717
+Darts,0.162,0.216,0.112
+Diving,0.05,0.065,0.036
+Dodgeball,0.077,0.072,0.082
+Dragon boat racing,0.07,0.058,0.082
+Eight ball,0.027,0.03,0.024
+Equestrian,0.442,0.141,0.738
+eSports,0.211,0.324,0.089
+Fencing,0.045,0.051,0.04
+Fishing (recreational),1.07,1.694,0.466
+Fitness/Gym,34.102,33.102,35.078
+Floorball,0.028,0.028,0.029
+Flying disc,0.249,0.292,0.205
+Football/soccer,5.624,8.871,2.499
+Gaelic football,0.063,0.1,0.028
+Geocaching,0.032,0.035,0.025
+Goalball,0.01,0.021,0
+Golf,4.563,7.555,1.685
+Gridiron,0.045,0.073,0.019
+Guides,0.004,0,0.008
+Gymnastics,0.54,0.332,0.742
+Handball,0.114,0.114,0.116
+Harness racing,0.011,0.022,0
+Hockey,0.512,0.507,0.522
+Horse racing,0.024,0.038,0.012
+Ice hockey,0.061,0.078,0.044
+Ice racing/speed skating,0.007,0.01,0.004
+Ice skating,0.214,0.103,0.314
+Jet skiing,0.067,0.111,0.025
+Judo,0.066,0.052,0.081
+Jujitsu,0.17,0.284,0.062
+Karate,0.186,0.237,0.139
+Kendo,0.03,0.047,0.014
+Kitesurfing/kiteboarding,0.013,0.021,0.006
+Korfball,0.005,0.005,0.005
+Kung fu wushu,0.009,0.009,0.01
+Lacrosse,0.03,0.025,0.036
+Lifesaving royal,0.005,0.011,0
+Lifesaving surf,0.13,0.198,0.065
+Luging,0,0,0
+Marching,0.012,0.015,0.009
+Martial arts,0.626,0.552,0.703
+Mixed martial arts,0.093,0.13,0.058
+Modern pentathlon,0.003,0.006,0
+Motor cycling,0.947,1.376,0.521
+Motor sport,0.254,0.404,0.094
+Mountain biking,0.726,1.182,0.285
+Mountain climbing,0.099,0.131,0.069
+Muay Thai,0.166,0.195,0.139
+Netball,2.107,0.685,3.495
+Obstacle,0.056,0.04,0.073
+Orienteering,0.07,0.068,0.073
+Outrigger canoe,0.027,0.033,0.021
+Oztag,0.223,0.248,0.202
+Paddle sports,0.209,0.205,0.214
+Paintball,0.012,0.015,0.009
+Parkour,0.022,0.01,0.035
+Petanque,0.003,0,0.006
+Physical Culture,0.061,0.023,0.098
+Pickleball/padel,1.314,1.324,1.311
+Pilates,7.181,1.207,12.993
+Polo,0.001,0.003,0
+Polocrosse,0.004,0.005,0.004
+Pony Club,0.046,0.028,0.059
+Powerlifting,0.042,0.05,0.035
+Ready Steady Go Kids,0.008,0.006,0.009
+Rock climbing/Abseiling/Caving,0.457,0.534,0.36
+Rodeo,0.003,0,0.005
+Rogaining,0.022,0.029,0.015
+Roller Derby,0.013,0.013,0.014
+Rope skipping,0.248,0.184,0.307
+Rowing,0.585,0.687,0.488
+Rugby league,0.763,1.209,0.338
+Rugby union,0.374,0.603,0.155
+Running/jogging,16.525,18.975,14.157
+Sailing,0.327,0.459,0.202
+Scootering,0.085,0.093,0.078
+Scouts,0.022,0.034,0.01
+Sepak takraw,0.003,0.005,0
+Shooting/field,0.203,0.377,0.037
+Shooting/range,0.136,0.228,0.047
+Skate,0.396,0.386,0.375
+Skeleton,0,0,0
+Ski & snowboard,0.812,0.964,0.671
+Skirmish,0.003,0,0.005
+Softball,0.136,0.116,0.153
+Sport climbing,0.542,0.664,0.411
+Squash,0.39,0.569,0.216
+Surfing,1.385,1.731,1.059
+Swimming,15.39,14.513,16.263
+Sword fighting,0.023,0.016,0.025
+Synchronised swimming,0.052,0.061,0.044
+Table tennis,1.79,2.534,1.08
+Taekwondo/Taekwon-do,0.115,0.147,0.085
+Tee ball,0.012,0.021,0.004
+Tennis,4.941,5.842,4.103
+Tenpin bowling,0.629,0.655,0.61
+Tobogganing,0.002,0,0.005
+Touch football,0.712,0.918,0.518
+Triathlon,0.143,0.184,0.105
+Underwater sports,0.836,0.836,0.844
+Virtual based physical activity,0.95,0.966,0.921
+Volleyball (indoor and outdoor),1.307,1.55,1.057
+Walking (Recreational),50.204,42.494,57.753
+Water polo,0.092,0.122,0.064
+Waterskiing/Wakeboarding,0.15,0.171,0.132
+Weight lifting,0.982,1.073,0.876
+Wheelchair rugby,0.002,0,0.005
+Wood chopping,0.033,0.056,0.011
+Wrestling,0.04,0.06,0.018
+Yoga,5.072,1.59,8.466

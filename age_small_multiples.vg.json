@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Adventure across the ages",
+    "subtitle": "Participation rate (%) by age group, 2025",
+    "anchor": "start",
+    "fontSize": 18,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#555"
+  },
+  "data": { "url": "data/activity_age_national.csv" },
+  "columns": 3,
+  "facet": {
+    "field": "activity",
+    "type": "nominal",
+    "title": null,
+    "header": { "labelFontSize": 12, "labelFontWeight": "bold" },
+    "sort": ["Bush walking", "Cycling", "Surfing", "Canoeing/Kayaking", "Mountain biking", "Rock climbing/Abseiling/Caving"]
+  },
+  "spec": {
+    "width": 180,
+    "height": 120,
+    "mark": { "type": "area", "line": { "color": "#2c7fb8" }, "color": { "x1": 1, "y1": 1, "x2": 1, "y2": 0, "gradient": "linear", "stops": [{ "offset": 0, "color": "white" }, { "offset": 1, "color": "#7fcdbb" }] } },
+    "encoding": {
+      "x": {
+        "field": "age_group",
+        "type": "ordinal",
+        "title": "Age group",
+        "sort": ["15-17", "18-24", "25-34", "35-44", "45-54", "55-64", "65+"],
+        "axis": { "labelAngle": -45, "labelFontSize": 9 }
+      },
+      "y": {
+        "field": "rate",
+        "type": "quantitative",
+        "title": "Participation (%)"
+      },
+      "tooltip": [
+        { "field": "activity", "type": "nominal", "title": "Activity" },
+        { "field": "age_group", "type": "nominal", "title": "Age" },
+        { "field": "rate", "type": "quantitative", "title": "Participation (%)", "format": ".2f" }
+      ]
+    }
+  },
+  "resolve": { "scale": { "y": "independent" } },
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "view": { "stroke": null },
+    "axis": { "grid": false }
+  }
+}

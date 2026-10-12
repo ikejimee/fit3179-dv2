@@ -1,0 +1,43 @@
+activity,age_group,rate
+Bush walking,15-17,14.605
+Bush walking,18-24,17.332
+Bush walking,25-34,20.301
+Bush walking,35-44,21.448
+Bush walking,45-54,19.691
+Bush walking,55-64,19.549
+Bush walking,65+,9.568
+Canoeing/Kayaking,15-17,0.664
+Canoeing/Kayaking,18-24,0.638
+Canoeing/Kayaking,25-34,0.972
+Canoeing/Kayaking,35-44,1.127
+Canoeing/Kayaking,45-54,1.254
+Canoeing/Kayaking,55-64,1.476
+Canoeing/Kayaking,65+,0.676
+Cycling,15-17,6.657
+Cycling,18-24,5.59
+Cycling,25-34,7.121
+Cycling,35-44,9.259
+Cycling,45-54,11.588
+Cycling,55-64,11.952
+Cycling,65+,5.576
+Mountain biking,15-17,1.716
+Mountain biking,18-24,0.485
+Mountain biking,25-34,0.612
+Mountain biking,35-44,0.966
+Mountain biking,45-54,1.211
+Mountain biking,55-64,0.714
+Mountain biking,65+,0.209
+Rock climbing/Abseiling/Caving,15-17,1.791
+Rock climbing/Abseiling/Caving,18-24,0.978
+Rock climbing/Abseiling/Caving,25-34,0.604
+Rock climbing/Abseiling/Caving,35-44,0.545
+Rock climbing/Abseiling/Caving,45-54,0.249
+Rock climbing/Abseiling/Caving,55-64,0.159
+Rock climbing/Abseiling/Caving,65+,0.046
+Surfing,15-17,2.218
+Surfing,18-24,1.269
+Surfing,25-34,1.566
+Surfing,35-44,1.818
+Surfing,45-54,1.768
+Surfing,55-64,1.353
+Surfing,65+,0.511

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Australia's most popular adventure activities",
+    "subtitle": "Share of adults who participated at least once, 2025",
+    "anchor": "start",
+    "fontSize": 18,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#555"
+  },
+  "width": "container",
+  "height": 360,
+  "data": { "url": "data/activity_national.csv" },
+  "transform": [
+    {
+      "filter": {
+        "field": "activity",
+        "oneOf": [
+          "Bush walking",
+          "Cycling",
+          "Surfing",
+          "Fishing (recreational)",
+          "Canoeing/Kayaking",
+          "Mountain biking",
+          "Sport climbing",
+          "Rock climbing/Abseiling/Caving",
+          "Sailing",
+          "Motor cycling",
+          "Orienteering",
+          "Mountain climbing"
+        ]
+      }
+    }
+  ],
+  "mark": { "type": "bar", "color": "#2c7fb8", "cornerRadiusEnd": 2 },
+  "encoding": {
+    "y": {
+      "field": "activity",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null,
+      "axis": { "labelFontSize": 12 }
+    },
+    "x": {
+      "field": "rate",
+      "type": "quantitative",
+      "title": "Participation rate (%)"
+    },
+    "tooltip": [
+      { "field": "activity", "type": "nominal", "title": "Activity" },
+      { "field": "rate", "type": "quantitative", "title": "Participation (%)", "format": ".2f" }
+    ]
+  },
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "view": { "stroke": null },
+    "axis": { "grid": false },
+    "axisX": { "grid": true, "gridColor": "#eee" }
+  }
+}

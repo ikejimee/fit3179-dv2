@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Where Australians get outdoors",
+    "subtitle": "Participation rate by state/territory. Use the dropdown to change activity.",
+    "anchor": "start",
+    "fontSize": 18,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#555"
+  },
+  "width": "container",
+  "height": 420,
+  "projection": {
+    "type": "conicEqualArea",
+    "rotate": [-132, 0],
+    "parallels": [-18, -36]
+  },
+  "params": [
+    {
+      "name": "Activity",
+      "value": "Bush walking",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Bush walking",
+          "Cycling",
+          "Canoeing/Kayaking",
+          "Mountain biking",
+          "Rock climbing/Abseiling/Caving",
+          "Sport climbing",
+          "Surfing",
+          "Fishing (recreational)",
+          "Sailing"
+        ],
+        "name": "Select activity:  "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "data/au_states.topojson",
+        "format": { "type": "topojson", "feature": "STE11aAust" }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#ececec",
+        "stroke": "white",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "data": { "url": "data/activity_by_state.csv" },
+      "transform": [
+        { "filter": "datum.activity == Activity" },
+        {
+          "lookup": "state_full",
+          "from": {
+            "data": {
+              "url": "data/au_states.topojson",
+              "format": { "type": "topojson", "feature": "STE11aAust" }
+            },
+            "key": "properties.STATE_NAME"
+          },
+          "as": "geo"
+        }
+      ],
+      "mark": { "type": "geoshape", "stroke": "white", "strokeWidth": 1 },
+      "encoding": {
+        "shape": { "field": "geo", "type": "geojson" },
+        "color": {
+          "field": "rate",
+          "type": "quantitative",
+          "title": "Participation (%)",
+          "scale": { "scheme": "yellowgreenblue" },
+          "legend": { "format": ".1f" }
+        },
+        "tooltip": [
+          { "field": "state_full", "type": "nominal", "title": "State/Territory" },
+          { "field": "activity", "type": "nominal", "title": "Activity" },
+          { "field": "rate", "type": "quantitative", "title": "Participation (%)", "format": ".2f" }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "view": { "stroke": null }
+  }
+}

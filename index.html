@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Australia's Great Outdoors — Adventure Participation</title>
+
+  <!-- Pure.css (single CSS framework) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" />
+
+  <!-- Google Fonts: one display + one body face -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Vega / Vega-Lite / Vega-Embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.29.0"></script>
+</head>
+
+<body>
+  <header class="hero">
+    <h1>Australia's Great Outdoors</h1>
+    <p>Which adventure activities Australians actually do — and where in the country they do them most. A look at national participation in 2025.</p>
+    <div class="byline">Bethany Aung · FIT3179 Data Visualisation 2 · Data: AusPlay (Australian Sports Commission)</div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- 1. MAP -->
+    <section class="block">
+      <h2>Where Australians get outdoors</h2>
+      <p class="lede">The map shades each state and territory by the share of adults who did the activity at least once in 2025. Bush walking leads almost everywhere, but the hotspots shift as you change activity — try switching to surfing or mountain biking.</p>
+      <div class="card">
+        <div id="map_choropleth" class="chart"></div>
+        <p class="note">Hover a state for its exact rate. Tasmania and the ACT punch well above their size for bush walking.</p>
+      </div>
+    </section>
+
+    <!-- 2. RANKED BAR -->
+    <section class="block">
+      <h2>What leads the pack</h2>
+      <p class="lede">Nationally, bush walking and cycling dominate the adventure category, while specialised pursuits like rock climbing and sailing remain niche.</p>
+      <div class="card">
+        <div id="chart_ranked" class="chart"></div>
+      </div>
+    </section>
+
+    <!-- 3. DUMBBELL -->
+    <section class="block">
+      <h2>The adventure gender gap</h2>
+      <p class="lede">Most adventure activities skew male — cycling, fishing and mountain biking especially. Bush walking is the clear exception, where women participate slightly more than men.</p>
+      <div class="card">
+        <div id="chart_dumbbell" class="chart"></div>
+      </div>
+    </section>
+
+    <!-- 4. HEATMAP -->
+    <section class="block">
+      <h2>Every activity, every state</h2>
+      <p class="lede">Reading down a column shows a state's outdoor profile; reading across a row shows where an activity concentrates. Brighter cells mean higher participation.</p>
+      <div class="card">
+        <div id="chart_heatmap" class="chart"></div>
+      </div>
+    </section>
+
+    <!-- 5. AGE SMALL MULTIPLES -->
+    <section class="block">
+      <h2>Adventure across the ages</h2>
+      <p class="lede">Participation peaks in different decades of life depending on the activity — bush walking holds up into middle age, while surfing and climbing fade faster.</p>
+      <div class="card">
+        <div id="chart_age" class="chart"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <h3>About this visualisation</h3>
+      <p><strong>Domain:</strong> Adventure tourism &amp; outdoor recreation in Australia. <strong>Audience:</strong> the average Australian adult curious about how the country plays outdoors and how their state compares.</p>
+
+      <h3>Data sources</h3>
+      <ul>
+        <li>AusPlay survey, January–December 2025 data tables (national + 8 state/territory), Australian Sports Commission. Released 30 April 2026. Licence: CC BY 4.0.</li>
+        <li>Australia state/territory boundaries: ABS (STE 2011), via the FIT3179 Vega-Lite teaching repository. Licence: CC BY.</li>
+      </ul>
+
+      <h3>Acknowledgement of AI use</h3>
+      <p>AI tools (Claude) were used to help clean the AusPlay spreadsheets into tidy CSVs, draft the Vega-Lite specifications, and refine the page copy and layout. All data values are unmodified official AusPlay figures.</p>
+
+      <hr class="rule" />
+      <p style="margin-top:16px;">© 2026 Bethany Aung · Built with Vega-Lite &amp; Pure.css</p>
+    </div>
+  </footer>
+
+  <!-- Minimal JS: embed the charts -->
+  <script src="js/vega_lite_vis.js"></script>
+</body>
+</html>

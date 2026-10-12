@@ -1,0 +1,73 @@
+state,state_full,activity,rate
+ACT,Australian Capital Territory,Bush walking,26.847
+ACT,Australian Capital Territory,Cycling,13.988
+ACT,Australian Capital Territory,Canoeing/Kayaking,0.943
+ACT,Australian Capital Territory,Mountain biking,1.281
+ACT,Australian Capital Territory,Rock climbing/Abseiling/Caving,0.588
+ACT,Australian Capital Territory,Surfing,0.571
+ACT,Australian Capital Territory,Fishing (recreational),0.194
+ACT,Australian Capital Territory,Sailing,0.253
+ACT,Australian Capital Territory,Sport climbing,1.207
+NSW,New South Wales,Bush walking,17.358
+NSW,New South Wales,Cycling,6.967
+NSW,New South Wales,Canoeing/Kayaking,1.216
+NSW,New South Wales,Mountain biking,0.574
+NSW,New South Wales,Rock climbing/Abseiling/Caving,0.455
+NSW,New South Wales,Surfing,1.671
+NSW,New South Wales,Fishing (recreational),1.049
+NSW,New South Wales,Sailing,0.359
+NSW,New South Wales,Sport climbing,0.633
+NT,Northern Territory,Bush walking,18.957
+NT,Northern Territory,Cycling,9.936
+NT,Northern Territory,Canoeing/Kayaking,1.714
+NT,Northern Territory,Mountain biking,1.027
+NT,Northern Territory,Rock climbing/Abseiling/Caving,0.569
+NT,Northern Territory,Surfing,0.217
+NT,Northern Territory,Fishing (recreational),1.525
+NT,Northern Territory,Sailing,0.15
+NT,Northern Territory,Sport climbing,0.301
+QLD,Queensland,Bush walking,17.684
+QLD,Queensland,Cycling,7.61
+QLD,Queensland,Canoeing/Kayaking,0.895
+QLD,Queensland,Mountain biking,0.909
+QLD,Queensland,Rock climbing/Abseiling/Caving,0.497
+QLD,Queensland,Surfing,1.379
+QLD,Queensland,Fishing (recreational),1.41
+QLD,Queensland,Sailing,0.351
+QLD,Queensland,Sport climbing,0.625
+SA,South Australia,Bush walking,15.384
+SA,South Australia,Cycling,8.364
+SA,South Australia,Canoeing/Kayaking,0.897
+SA,South Australia,Mountain biking,0.532
+SA,South Australia,Rock climbing/Abseiling/Caving,0.17
+SA,South Australia,Surfing,1.277
+SA,South Australia,Fishing (recreational),1.25
+SA,South Australia,Sailing,0.109
+SA,South Australia,Sport climbing,0.29
+TAS,Tasmania,Bush walking,27.515
+TAS,Tasmania,Cycling,9.143
+TAS,Tasmania,Canoeing/Kayaking,2.076
+TAS,Tasmania,Mountain biking,1.768
+TAS,Tasmania,Rock climbing/Abseiling/Caving,0.458
+TAS,Tasmania,Surfing,1.358
+TAS,Tasmania,Fishing (recreational),0.971
+TAS,Tasmania,Sailing,0.673
+TAS,Tasmania,Sport climbing,0.357
+VIC,Victoria,Bush walking,16.125
+VIC,Victoria,Cycling,9.044
+VIC,Victoria,Canoeing/Kayaking,0.786
+VIC,Victoria,Mountain biking,0.502
+VIC,Victoria,Rock climbing/Abseiling/Caving,0.457
+VIC,Victoria,Surfing,1.01
+VIC,Victoria,Fishing (recreational),0.666
+VIC,Victoria,Sailing,0.255
+VIC,Victoria,Sport climbing,0.502
+WA,Western Australia,Bush walking,18.273
+WA,Western Australia,Cycling,10.336
+WA,Western Australia,Canoeing/Kayaking,0.857
+WA,Western Australia,Mountain biking,1.146
+WA,Western Australia,Rock climbing/Abseiling/Caving,0.546
+WA,Western Australia,Surfing,1.762
+WA,Western Australia,Fishing (recreational),1.451
+WA,Western Australia,Sailing,0.457
+WA,Western Australia,Sport climbing,0.335

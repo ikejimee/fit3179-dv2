@@ -1,0 +1,47 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Every activity, every state",
+    "subtitle": "Participation rate (%) by activity and state/territory, 2025",
+    "anchor": "start",
+    "fontSize": 18,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#555"
+  },
+  "width": "container",
+  "height": 320,
+  "data": { "url": "data/activity_by_state.csv" },
+  "mark": { "type": "rect", "tooltip": true },
+  "encoding": {
+    "x": {
+      "field": "state",
+      "type": "nominal",
+      "title": null,
+      "sort": ["NSW", "VIC", "QLD", "WA", "SA", "TAS", "ACT", "NT"],
+      "axis": { "labelAngle": 0, "labelFontSize": 12 }
+    },
+    "y": {
+      "field": "activity",
+      "type": "nominal",
+      "title": null,
+      "sort": "-color",
+      "axis": { "labelFontSize": 11 }
+    },
+    "color": {
+      "field": "rate",
+      "type": "quantitative",
+      "title": "Participation (%)",
+      "scale": { "scheme": "viridis", "type": "sqrt" }
+    },
+    "tooltip": [
+      { "field": "state_full", "type": "nominal", "title": "State/Territory" },
+      { "field": "activity", "type": "nominal", "title": "Activity" },
+      { "field": "rate", "type": "quantitative", "title": "Participation (%)", "format": ".2f" }
+    ]
+  },
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "view": { "stroke": null },
+    "axis": { "domain": false, "ticks": false }
+  }
+}
