@@ -3,7 +3,7 @@
 An interactive single-page visualisation of adventure-tourism and outdoor-activity
 participation across Australia, built with **Vega-Lite** and **Pure.css**.
 
-**Live page:** _(add your GitHub Pages URL here once published)_
+**Live page:** https://ikejimee.github.io/fit3179-dv2/
 
 ## Topic
 Adventure tourism activities (bush walking, cycling, kayaking, mountain biking,
