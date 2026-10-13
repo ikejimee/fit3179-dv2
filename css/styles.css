@@ -135,7 +135,11 @@ body {
   display: grid;
   grid-template-columns: minmax(0, 2.15fr) minmax(220px, 1fr);
   gap: 22px;
-  align-items: start;
+  align-items: center;
+}
+/* age chart has fixed-width facets; hug the card to them so no white gap forms */
+.section-grid.fit {
+  grid-template-columns: max-content minmax(220px, 1fr);
 }
 .card {
   background: var(--card);
