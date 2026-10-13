@@ -1,15 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "The adventure gender gap",
-    "subtitle": "Male vs female participation rate by activity, 2025",
-    "anchor": "start",
-    "fontSize": 18,
-    "subtitleFontSize": 12,
-    "subtitleColor": "#555"
+    "text": "Men lead most adventure sports; women lead bush walking",
+    "subtitle": "Male and female participation rate by activity, 2025"
   },
   "width": "container",
-  "height": 340,
+  "height": 360,
   "data": { "url": "data/activity_national.csv" },
   "transform": [
     {
@@ -35,31 +31,34 @@
       "type": "nominal",
       "sort": { "field": "male", "order": "descending" },
       "title": null,
-      "axis": { "labelFontSize": 12 }
+      "axis": { "labelFontSize": 12, "labelLimit": 220 }
+    },
+    "x": {
+      "field": "rate_sex",
+      "type": "quantitative",
+      "title": "Participation rate (%)",
+      "scale": { "domain": [0, 20] }
     }
   },
   "layer": [
     {
-      "mark": { "type": "rule", "color": "#bbb", "strokeWidth": 2 },
+      "mark": { "type": "rule", "color": "#c7ccc6", "strokeWidth": 2 },
       "encoding": {
-        "x": { "field": "female", "type": "quantitative", "title": "Participation rate (%)" },
+        "x": { "field": "female", "type": "quantitative" },
         "x2": { "field": "male" }
       }
     },
     {
       "transform": [{ "fold": ["male", "female"], "as": ["sex", "rate_sex"] }],
-      "mark": { "type": "point", "filled": true, "size": 130 },
+      "mark": { "type": "point", "filled": true, "size": 150, "opacity": 1 },
       "encoding": {
         "x": { "field": "rate_sex", "type": "quantitative" },
         "color": {
           "field": "sex",
           "type": "nominal",
-          "title": "Sex",
-          "scale": {
-            "domain": ["male", "female"],
-            "range": ["#0072B2", "#E69F00"]
-          },
-          "legend": { "orient": "top", "labelExpr": "datum.label == 'male' ? 'Male' : 'Female'" }
+          "title": null,
+          "scale": { "domain": ["male", "female"], "range": ["#3F5C82", "#9E7BB5"] },
+          "legend": { "orient": "bottom-right", "labelExpr": "datum.label == 'male' ? 'Men' : 'Women'", "symbolSize": 150, "fillColor": "white", "padding": 6 }
         },
         "tooltip": [
           { "field": "activity", "type": "nominal", "title": "Activity" },
@@ -67,12 +66,31 @@
           { "field": "rate_sex", "type": "quantitative", "title": "Participation (%)", "format": ".2f" }
         ]
       }
+    },
+    {
+      "data": { "values": [{ "activity": "Bush walking", "x": 18.6, "label": "Women lead" }] },
+      "mark": { "type": "text", "align": "left", "dx": 10, "fontSize": 11, "fontStyle": "italic", "color": "#7E5CA0", "fontWeight": "bold" },
+      "encoding": {
+        "y": { "field": "activity", "type": "nominal" },
+        "x": { "field": "x", "type": "quantitative" },
+        "text": { "field": "label", "type": "nominal" }
+      }
+    },
+    {
+      "data": { "values": [{ "activity": "Cycling", "x": 10.43, "label": "Widest gap: men +4.2 pts" }] },
+      "mark": { "type": "text", "align": "left", "dx": 10, "fontSize": 11, "fontStyle": "italic", "color": "#3F5C82", "fontWeight": "bold" },
+      "encoding": {
+        "y": { "field": "activity", "type": "nominal" },
+        "x": { "field": "x", "type": "quantitative" },
+        "text": { "field": "label", "type": "nominal" }
+      }
     }
   ],
   "config": {
     "font": "Inter, system-ui, sans-serif",
     "view": { "stroke": null },
-    "axisX": { "grid": true, "gridColor": "#eee" },
-    "axisY": { "grid": false }
+    "title": { "anchor": "start", "font": "Inter", "fontSize": 15, "fontWeight": 600, "color": "#14543b", "subtitleColor": "#5c6b63", "subtitlePadding": 6, "offset": 12 },
+    "axis": { "labelFont": "Inter", "titleFont": "Inter", "titleColor": "#3a4a42", "labelColor": "#5c6b63", "titlePadding": 10, "grid": false },
+    "axisX": { "grid": true, "gridColor": "#eceae3" }
   }
 }
