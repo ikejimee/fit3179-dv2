@@ -4,7 +4,7 @@ An interactive single-page visualisation of adventure-tourism and outdoor-activi
 participation across Australia, built with **Vega-Lite** and **Pure.css**.
 
 **Author:** Bethany Aung — Student ID 34960627
-**Live page:** _(add your GitHub Pages URL here once published)_
+**Live page:** https://ikejimee.github.io/fit3179-dv2/
 
 ## Topic
 Adventure activities (bush walking, cycling, kayaking, mountain biking, rock
