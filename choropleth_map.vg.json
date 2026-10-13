@@ -7,7 +7,6 @@
   },
   "width": "container",
   "height": 760,
-  "autosize": { "type": "none", "contains": "padding" },
   "projection": {
     "type": "conicEqualArea",
     "rotate": [-132, 0],
