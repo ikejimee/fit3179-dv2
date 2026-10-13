@@ -8,10 +8,10 @@
   <!-- Pure.css (single CSS framework) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" />
 
-  <!-- Google Fonts: one display + one body face -->
+  <!-- Fonts: Bitter (slab serif, headings) + Inter (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/styles.css" />
 
@@ -22,78 +22,148 @@
 </head>
 
 <body>
-  <header class="hero">
-    <h1>Australia's Great Outdoors</h1>
-    <p>Which adventure activities Australians actually do — and where in the country they do them most. A look at national participation in 2025.</p>
-    <div class="byline">Bethany Aung · FIT3179 Data Visualisation 2 · Data: AusPlay (Australian Sports Commission)</div>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" style="background-image:url('hero.jpg');">
+    <div class="hero-panel">
+      <h1>Australia's Great Outdoors</h1>
+      <p>Which adventure activities Australians do, who does them, and where in the country they happen most.</p>
+      <div class="byline">Bethany Aung · Student ID 34960627 · FIT3179 Data Visualisation 2</div>
+    </div>
   </header>
 
-  <main class="wrap">
+  <main>
 
-    <!-- 1. MAP -->
-    <section class="block">
-      <h2>Where Australians get outdoors</h2>
-      <p class="lede">The map shades each state and territory by the share of adults who did the activity at least once in 2025. Bush walking leads almost everywhere, but the hotspots shift as you change activity — try switching to surfing or mountain biking.</p>
-      <div class="card">
-        <div id="map_choropleth" class="chart"></div>
-        <p class="note">Hover a state for its exact rate. Tasmania and the ACT punch well above their size for bush walking.</p>
+    <!-- ===== INTRO ===== -->
+    <section class="intro wrap">
+      <p class="intro-lead">
+        Nearly <span class="hl-bush">one in six Australian adults</span> went bush walking in 2025, and participation in
+        outdoor pursuits keeps climbing. But the national average hides sharp differences. A Tasmanian gets outdoors far
+        more than a South Australian, men and women pick different activities, and a sport popular with teenagers can
+        empty out by middle age. This page follows adventure participation across state, sex and age, using the
+        Australian Sports Commission's 2025 AusPlay survey.
+      </p>
+      <p class="intro-note">Every figure is a share of the adult population who did the activity at least once in 2025. Hover any chart for exact values.</p>
+    </section>
+
+    <!-- ===== GROUP 1: WHAT ===== -->
+    <section class="group wrap">
+      <div class="group-head"><h2>What Australians do outdoors</h2></div>
+      <p class="group-intro">Start with the simplest question. Which adventure activities draw the most people?</p>
+
+      <div class="block">
+        <div class="section-grid">
+          <div class="card chart-card">
+            <div id="chart_ranked" class="chart"></div>
+          </div>
+          <aside class="insight">
+            <h3>Key insights</h3>
+            <ul>
+              <li><span class="hl-bush">Bush walking (17.5%)</span> and <span class="hl-bush">cycling (8.3%)</span> together dwarf every other adventure activity.</li>
+              <li>Specialist climbing sits near the bottom. <span class="hl-bush">Rock climbing</span> reaches just 0.5% of adults.</li>
+              <li>Low participation does not mean low value. The niche sports still anchor a real tourism and gear economy.</li>
+            </ul>
+          </aside>
+        </div>
       </div>
     </section>
 
-    <!-- 2. RANKED BAR -->
-    <section class="block">
-      <h2>What leads the pack</h2>
-      <p class="lede">Nationally, bush walking and cycling dominate the adventure category, while specialised pursuits like rock climbing and sailing remain niche.</p>
-      <div class="card">
-        <div id="chart_ranked" class="chart"></div>
+    <!-- ===== GROUP 2: WHO ===== -->
+    <section class="group wrap">
+      <div class="group-head"><h2>Who gets outdoors</h2></div>
+      <p class="group-intro">The national averages split sharply once you look at who takes part, by sex and by age.</p>
+
+      <div class="block">
+        <p class="lede">Each line links <span class="hl-men">men</span> and <span class="hl-women">women</span> for one activity. The longer the line, the wider the gap.</p>
+        <div class="section-grid">
+          <div class="card chart-card">
+            <div id="chart_dumbbell" class="chart"></div>
+          </div>
+          <aside class="insight">
+            <h3>Key insights</h3>
+            <ul>
+              <li><span class="hl-men">Men</span> lead cycling by 4.2 points, the widest gap, and also lead fishing and mountain biking by wide margins.</li>
+              <li><span class="hl-women">Women</span> lead only one activity: bush walking, at 18.6% against 16.3%.</li>
+              <li>Climbing and kayaking draw men and women in near-equal numbers.</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="lede">Each panel keeps its own scale so you can read the shape of every activity, not just the biggest.</p>
+        <div class="section-grid">
+          <div class="card chart-card">
+            <div id="chart_age" class="chart"></div>
+          </div>
+          <aside class="insight">
+            <h3>Key insights</h3>
+            <ul>
+              <li><span class="hl-bush">Bush walking</span> holds strong from 25 to 64, peaking at 35–44 (21%).</li>
+              <li><span class="hl-bush">Rock climbing</span> is a young person's sport. It tops out at 15–17 and falls away fast.</li>
+              <li>Kayaking runs the other way, climbing to a 55–64 peak as paddlers trade intensity for the water.</li>
+            </ul>
+          </aside>
+        </div>
       </div>
     </section>
 
-    <!-- 3. DUMBBELL -->
-    <section class="block">
-      <h2>The adventure gender gap</h2>
-      <p class="lede">Most adventure activities skew male — cycling, fishing and mountain biking especially. Bush walking is the clear exception, where women participate slightly more than men.</p>
-      <div class="card">
-        <div id="chart_dumbbell" class="chart"></div>
+    <!-- ===== GROUP 3: WHERE ===== -->
+    <section class="group wrap">
+      <div class="group-head"><h2>Where they get outdoors</h2></div>
+      <p class="group-intro">Participation is uneven across the country. Some states live outdoors; others lag well behind.</p>
+
+      <div class="block">
+        <p class="lede">Each state is shaded by how many adults took part. Pick an activity to see its map change.</p>
+        <div class="card chart-card map-card">
+          <div id="map_choropleth" class="chart"></div>
+        </div>
+        <div class="insight-row">
+          <div class="insight-mini"><span class="hl-tas">Tasmania (27.5%)</span> and the <span class="hl-tas">ACT (26.8%)</span> lead the country for bush walking, far above the states with big cities.</div>
+          <div class="insight-mini"><span class="hl-bush">South Australia (15.4%)</span> sits lowest, a 12-point gap behind Tasmania.</div>
+          <div class="insight-mini">Switch to <span class="hl-bush">cycling</span> and the ACT jumps to the front at 14%. Switch to surfing and the coastal states take over.</div>
+        </div>
       </div>
+
+      <div class="block">
+        <p class="lede">Read down a column for a state's outdoor profile. Read across a row to see where one activity concentrates.</p>
+        <div class="card chart-card map-card">
+          <div id="chart_heatmap" class="chart"></div>
+        </div>
+        <div class="insight-row">
+          <div class="insight-mini">The top two rows glow green everywhere. Bush walking and cycling carry the outdoor economy in every state.</div>
+          <div class="insight-mini"><span class="hl-tas">Tasmania</span> runs hot across the board, not just bush walking.</div>
+          <div class="insight-mini">Warm-water activities tilt north and west. <span class="hl-bush">Fishing</span> peaks in the NT and WA, surfing along the eastern seaboard.</div>
+        </div>
+      </div>
+
     </section>
 
-    <!-- 4. HEATMAP -->
-    <section class="block">
-      <h2>Every activity, every state</h2>
-      <p class="lede">Reading down a column shows a state's outdoor profile; reading across a row shows where an activity concentrates. Brighter cells mean higher participation.</p>
-      <div class="card">
-        <div id="chart_heatmap" class="chart"></div>
-      </div>
+    <!-- ===== GROUP 4: PROTECTED PLACES (planned) ===== -->
+    <section class="group wrap">
+      <div class="group-head"><h2>Where the adventure happens</h2></div>
+      <p class="group-intro">Australia's national parks and reserves are the backdrop for most of these activities. This section maps those protected places by size and by type.</p>
     </section>
 
-    <!-- 5. AGE SMALL MULTIPLES -->
-    <section class="block">
-      <h2>Adventure across the ages</h2>
-      <p class="lede">Participation peaks in different decades of life depending on the activity — bush walking holds up into middle age, while surfing and climbing fade faster.</p>
-      <div class="card">
-        <div id="chart_age" class="chart"></div>
-      </div>
+    <!-- ===== GROUP 5: TOURISM TRENDS (planned) ===== -->
+    <section class="group wrap">
+      <div class="group-head"><h2>How outdoor tourism is changing</h2></div>
+      <p class="group-intro">Visitor numbers add a second lens beyond who lives nearby, tracking how outdoor and nature-based tourism is shifting across the states.</p>
     </section>
 
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer>
     <div class="wrap">
-      <h3>About this visualisation</h3>
-      <p><strong>Domain:</strong> Adventure tourism &amp; outdoor recreation in Australia. <strong>Audience:</strong> the average Australian adult curious about how the country plays outdoors and how their state compares.</p>
-
-      <h3>Data sources</h3>
-      <ul>
-        <li>AusPlay survey, January–December 2025 data tables (national + 8 state/territory), Australian Sports Commission. Released 30 April 2026. Licence: CC BY 4.0.</li>
-        <li>Australia state/territory boundaries: ABS (STE 2011), via the FIT3179 Vega-Lite teaching repository. Licence: CC BY.</li>
+      <h3>Data &amp; credits</h3>
+      <ul class="foot-credits">
+        <li>AusPlay survey, Jan–Dec 2025 data tables (national and 8 states/territories), Australian Sports Commission, released 30 April 2026. CC BY 4.0.</li>
+        <li>State boundaries: ABS STE 2011, via the FIT3179 Vega-Lite teaching repository. CC BY.</li>
+        <li>Hero photograph: Wineglass Bay, Tasmania, from <a href="https://www.signatureluxurytravel.com.au/top-walks-in-australia/" target="_blank" rel="noopener">Signature Luxury Travel &amp; Style</a>.</li>
       </ul>
-
-      <h3>Acknowledgement of AI use</h3>
-      <p>AI tools (Claude) were used to help clean the AusPlay spreadsheets into tidy CSVs, draft the Vega-Lite specifications, and refine the page copy and layout. All data values are unmodified official AusPlay figures.</p>
-
       <hr class="rule" />
-      <p style="margin-top:16px;">© 2026 Bethany Aung · Built with Vega-Lite &amp; Pure.css</p>
+      <p class="foot-sign">Bethany Aung · Student ID 34960627 · FIT3179 Data Visualisation 2 · Built with Vega-Lite and Pure.css</p>
     </div>
   </footer>
 
