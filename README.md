@@ -1,4 +1,4 @@
-# Australia's Great Outdoors — FIT3179 Data Visualisation 2
+# Australia's Great Outdoors - FIT3179 Data Visualisation 2
 
 An interactive single-page visualisation of adventure-tourism and outdoor-activity
 participation across Australia, built with **Vega-Lite** and **Pure.css**.
