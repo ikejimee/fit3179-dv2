@@ -37,7 +37,7 @@
       "field": "rate_sex",
       "type": "quantitative",
       "title": "Participation rate (%)",
-      "scale": { "domain": [0, 20] }
+      "scale": { "domain": [0, 25] }
     }
   },
   "layer": [
