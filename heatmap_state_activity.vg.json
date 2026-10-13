@@ -2,46 +2,61 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Every activity, every state",
-    "subtitle": "Participation rate (%) by activity and state/territory, 2025",
-    "anchor": "start",
-    "fontSize": 18,
-    "subtitleFontSize": 12,
-    "subtitleColor": "#555"
+    "subtitle": "Participation rate (%) by activity and state/territory, 2025. Darker means higher."
   },
   "width": "container",
-  "height": 320,
+  "height": 480,
   "data": { "url": "data/activity_by_state.csv" },
-  "mark": { "type": "rect", "tooltip": true },
   "encoding": {
     "x": {
       "field": "state",
       "type": "nominal",
       "title": null,
       "sort": ["NSW", "VIC", "QLD", "WA", "SA", "TAS", "ACT", "NT"],
-      "axis": { "labelAngle": 0, "labelFontSize": 12 }
+      "axis": { "labelAngle": 0, "labelFontSize": 12, "labelFontWeight": "bold", "orient": "top" }
     },
     "y": {
       "field": "activity",
       "type": "nominal",
       "title": null,
-      "sort": "-color",
-      "axis": { "labelFontSize": 11 }
-    },
-    "color": {
-      "field": "rate",
-      "type": "quantitative",
-      "title": "Participation (%)",
-      "scale": { "scheme": "viridis", "type": "sqrt" }
-    },
-    "tooltip": [
-      { "field": "state_full", "type": "nominal", "title": "State/Territory" },
-      { "field": "activity", "type": "nominal", "title": "Activity" },
-      { "field": "rate", "type": "quantitative", "title": "Participation (%)", "format": ".2f" }
-    ]
+      "sort": ["Bush walking", "Cycling", "Surfing", "Fishing (recreational)", "Canoeing/Kayaking", "Mountain biking", "Sport climbing", "Rock climbing/Abseiling/Caving", "Sailing"],
+      "axis": { "labelFontSize": 11, "labelLimit": 200 }
+    }
   },
+  "layer": [
+    {
+      "mark": { "type": "rect", "stroke": "white", "strokeWidth": 1.5 },
+      "encoding": {
+        "color": {
+          "field": "rate",
+          "type": "quantitative",
+          "title": "Participation (%)",
+          "scale": { "scheme": "greens", "type": "sqrt" },
+          "legend": { "gradientLength": 160 }
+        },
+        "tooltip": [
+          { "field": "state_full", "type": "nominal", "title": "State/Territory" },
+          { "field": "activity", "type": "nominal", "title": "Activity" },
+          { "field": "rate", "type": "quantitative", "title": "Participation (%)", "format": ".2f" }
+        ]
+      }
+    },
+    {
+      "mark": { "type": "text", "fontSize": 9.5 },
+      "encoding": {
+        "text": { "field": "rate", "type": "quantitative", "format": ".1f" },
+        "color": {
+          "condition": { "test": "datum.rate > 6", "value": "white" },
+          "value": "#3a4a42"
+        }
+      }
+    }
+  ],
   "config": {
     "font": "Inter, system-ui, sans-serif",
     "view": { "stroke": null },
-    "axis": { "domain": false, "ticks": false }
+    "title": { "anchor": "start", "font": "Inter", "fontSize": 15, "fontWeight": 600, "color": "#14543b", "subtitleColor": "#5c6b63", "subtitlePadding": 6, "offset": 12 },
+    "axis": { "labelFont": "Inter", "titleFont": "Inter", "labelColor": "#3a4a42", "domain": false, "ticks": false },
+    "legend": { "labelFont": "Inter", "titleFont": "Inter", "titleColor": "#3a4a42" }
   }
 }
