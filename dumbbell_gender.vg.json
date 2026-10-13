@@ -77,7 +77,7 @@
       }
     },
     {
-      "data": { "values": [{ "activity": "Cycling", "x": 10.43, "label": "Widest gap: men +4.2 pts" }] },
+      "data": { "values": [{ "activity": "Cycling", "x": 10.43, "label": "Widest gap: men +4.2%" }] },
       "mark": { "type": "text", "align": "left", "dx": 10, "fontSize": 11, "fontStyle": "italic", "color": "#3F5C82", "fontWeight": "bold" },
       "encoding": {
         "y": { "field": "activity", "type": "nominal" },
