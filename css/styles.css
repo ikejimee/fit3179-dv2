@@ -17,7 +17,7 @@
   --bg: #fbfbf8;
   --card: #ffffff;
   --line: #e4e7e1;
-  --maxw: 1080px;
+  --maxw: 1200px;
 }
 
 * { box-sizing: border-box; }
@@ -108,15 +108,14 @@ body {
 .lede { color: var(--muted); margin: 2px 0 16px; max-width: 760px; font-size: 0.98rem; }
 
 /* ===== Chart + insight grid (sight-line aligned) ===== */
+/* All chart sections share one chart-column width so their card borders
+   and the insight boxes line up (sight-line alignment). 821px holds the
+   widest chart (the age small-multiples); the other charts fill it. */
 .section-grid {
   display: grid;
-  grid-template-columns: minmax(0, 2.15fr) minmax(220px, 1fr);
+  grid-template-columns: 821px minmax(260px, 1fr);
   gap: 22px;
   align-items: center;
-}
-/* age chart has fixed-width facets; hug the card to them so no white gap forms */
-.section-grid.fit {
-  grid-template-columns: max-content minmax(220px, 1fr);
 }
 .card {
   background: var(--card);
@@ -210,9 +209,8 @@ footer a { color: #8fc1e3; }
 .foot-sign { color: #9ec4ad; font-size: 0.82rem; margin: 0; }
 
 /* ===== Responsive ===== */
-@media (max-width: 860px) {
+@media (max-width: 1160px) {
   .section-grid { grid-template-columns: 1fr; }
-  .section-grid.fit { grid-template-columns: 1fr; }
   .insight-row { grid-template-columns: 1fr; }
   .hero { min-height: 380px; }
 }
