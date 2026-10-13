@@ -1,12 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Australia's most popular adventure activities",
-    "subtitle": "Share of adults who participated at least once, 2025",
-    "anchor": "start",
-    "fontSize": 18,
-    "subtitleFontSize": 12,
-    "subtitleColor": "#555"
+    "text": "Bush walking and cycling dominate",
+    "subtitle": "Share of Australian adults who did each adventure activity at least once, 2025"
   },
   "width": "container",
   "height": 360,
@@ -21,40 +17,54 @@
           "Surfing",
           "Fishing (recreational)",
           "Canoeing/Kayaking",
+          "Motor cycling",
           "Mountain biking",
           "Sport climbing",
           "Rock climbing/Abseiling/Caving",
           "Sailing",
-          "Motor cycling",
-          "Orienteering",
-          "Mountain climbing"
+          "Mountain climbing",
+          "Orienteering"
         ]
       }
     }
   ],
-  "mark": { "type": "bar", "color": "#2c7fb8", "cornerRadiusEnd": 2 },
   "encoding": {
     "y": {
       "field": "activity",
       "type": "nominal",
       "sort": "-x",
       "title": null,
-      "axis": { "labelFontSize": 12 }
+      "axis": { "labelFontSize": 12, "labelLimit": 220 }
     },
     "x": {
       "field": "rate",
       "type": "quantitative",
-      "title": "Participation rate (%)"
-    },
-    "tooltip": [
-      { "field": "activity", "type": "nominal", "title": "Activity" },
-      { "field": "rate", "type": "quantitative", "title": "Participation (%)", "format": ".2f" }
-    ]
+      "title": "Participation rate (%)",
+      "scale": { "domain": [0, 19] }
+    }
   },
+  "layer": [
+    {
+      "mark": { "type": "bar", "color": "#2e8b57", "cornerRadiusEnd": 2, "height": { "band": 0.7 } },
+      "encoding": {
+        "tooltip": [
+          { "field": "activity", "type": "nominal", "title": "Activity" },
+          { "field": "rate", "type": "quantitative", "title": "Participation (%)", "format": ".2f" }
+        ]
+      }
+    },
+    {
+      "mark": { "type": "text", "align": "left", "dx": 4, "fontSize": 11, "color": "#3a4a42" },
+      "encoding": {
+        "text": { "field": "rate", "type": "quantitative", "format": ".1f" }
+      }
+    }
+  ],
   "config": {
     "font": "Inter, system-ui, sans-serif",
     "view": { "stroke": null },
-    "axis": { "grid": false },
-    "axisX": { "grid": true, "gridColor": "#eee" }
+    "title": { "anchor": "start", "font": "Inter", "fontSize": 15, "fontWeight": 600, "color": "#14543b", "subtitleColor": "#5c6b63", "subtitlePadding": 6, "offset": 12 },
+    "axis": { "labelFont": "Inter", "titleFont": "Inter", "titleColor": "#3a4a42", "labelColor": "#5c6b63", "titlePadding": 10, "grid": false },
+    "axisX": { "grid": true, "gridColor": "#eceae3" }
   }
 }
