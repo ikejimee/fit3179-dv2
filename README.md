@@ -3,7 +3,7 @@
 An interactive single-page visualisation of adventure-tourism and outdoor-activity
 participation across Australia, built with **Vega-Lite** and **Pure.css**.
 
-**Author:** Bethany Aung — Student ID 34960627
+**Author:** Bethany Aung - Student ID 34960627
 **Live page:** https://ikejimee.github.io/fit3179-dv2/
 
 ## Topic
@@ -28,17 +28,6 @@ data/activity_age_national.csv  national rate by age group
 data/au_states.topojson         Australia state/territory boundaries (basemap)
 ```
 
-## Design choices
-- **Two-colour scheme:** forest green (primary) and amber (accent).
-- **Map colour:** single-hue green sequential scale. Brightness encodes the value,
-  darker means higher participation. No hue variation, following cartographic
-  convention for quantitative data.
-- **Colour-blind safe:** single-hue sequential scales plus the Okabe–Ito
-  green/amber pair for the men/women comparison.
-- **Typography:** Bitter (slab serif) for section headings, Inter (sans) for body
-  and plot titles, so section titles and plot titles read at different levels.
-- **Annotations:** a key-insights column sits beside every chart, plus in-chart
-  value labels and callouts.
 
 ## Data sources
 - **AusPlay** survey, Jan–Dec 2025 data tables (national and 8 states/territories),
@@ -46,7 +35,3 @@ data/au_states.topojson         Australia state/territory boundaries (basemap)
 - **State boundaries:** ABS STE 2011, via the FIT3179 Vega-Lite teaching repository. CC BY.
 - **Hero photograph:** Wineglass Bay, Tasmania, Signature Luxury Travel & Style.
 
-## AI use
-AI (Claude) helped clean the AusPlay spreadsheets into tidy CSVs, draft the
-Vega-Lite specifications, and edit the page copy. Every value is an unmodified
-official AusPlay figure.
