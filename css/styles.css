@@ -152,6 +152,12 @@ body {
   border-radius: 12px;
   padding: 18px 20px;
 }
+.insight-lead {
+  margin: 0 0 14px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #35433b;
+}
 .insight h3 {
   font-family: "Inter", sans-serif;
   font-size: 0.78rem;
