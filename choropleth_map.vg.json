@@ -6,7 +6,7 @@
     "subtitleFontSize": 12
   },
   "width": "container",
-  "height": 760,
+  "height": 500,
   "projection": {
     "type": "conicEqualArea",
     "rotate": [-132, 0],
@@ -64,9 +64,13 @@
         "color": {
           "field": "rate",
           "type": "quantitative",
-          "title": "Participation (%)",
-          "scale": { "type": "quantile", "scheme": "greens" },
-          "legend": { "format": ".0f", "orient": "top", "direction": "horizontal", "titleFontSize": 11, "titleLimit": 200, "symbolSize": 150, "columns": 6, "offset": 8 }
+          "title": "Participation (% of adults)",
+          "scale": {
+            "type": "threshold",
+            "domain": [2, 5, 10, 15, 20],
+            "range": ["#edf8e9", "#c7e9c0", "#a1d99b", "#74c476", "#31a354", "#006d2c"]
+          },
+          "legend": { "format": ".0f", "orient": "top", "direction": "horizontal", "titleFontSize": 11, "titleLimit": 220, "symbolSize": 150, "columns": 6, "offset": 8 }
         },
         "tooltip": [
           { "field": "state_full", "type": "nominal", "title": "State/Territory" },
