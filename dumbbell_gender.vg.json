@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Men lead most adventure sports; women lead bush walking",
+    "text": "Participation rate by activity, men vs women, 2025",
     "subtitle": "Male and female participation rate by activity, 2025"
   },
   "width": "container",
