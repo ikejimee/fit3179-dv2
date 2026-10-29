@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Bush walking and cycling dominate",
+    "text": "Participation rate by adventure activity, 2025",
     "subtitle": "Share of Australian adults who did each adventure activity at least once, 2025"
   },
   "width": "container",
