@@ -43,7 +43,7 @@
       "name": "color",
       "type": "ordinal",
       "domain": ["Land & trail", "Water", "Climbing & vertical"],
-      "range": ["#14543b", "#2e8b57", "#5aa47e"]
+      "range": ["#117733", "#0072B2", "#D55E00"]
     }
   ],
   "legends": [
