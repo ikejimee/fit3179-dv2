@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Every activity, every state",
+    "text": "Participation rate by state and activity, 2025",
     "subtitle": "Participation rate (%) by activity and state/territory, 2025. Darker means higher."
   },
   "width": "container",
