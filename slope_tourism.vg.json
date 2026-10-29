@@ -1,0 +1,83 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Change in visitor nights by state, 2023 to 2024",
+    "subtitle": ["Each state's 2024 visitor nights as a percentage of its own 2023 total.", "A visitor night is one night an overnight visitor spends away from home."]
+  },
+  "width": "container",
+  "height": 430,
+  "data": { "url": "data/tourism_nights.csv" },
+  "encoding": {
+    "x": {
+      "field": "year", "type": "ordinal", "title": null,
+      "axis": { "labelAngle": 0, "labelFontSize": 13, "labelFontWeight": "bold" },
+      "scale": { "padding": 0.32 }
+    },
+    "y": {
+      "field": "index", "type": "quantitative",
+      "title": "Visitor nights (% of 2023)",
+      "scale": { "domain": [78, 110] }
+    },
+    "color": {
+      "field": "direction", "type": "nominal", "title": null,
+      "scale": { "domain": ["Grew", "Declined"], "range": ["#2e8b57", "#1366a0"] },
+      "legend": { "orient": "bottom-left" }
+    }
+  },
+  "layer": [
+    {
+      "mark": { "type": "rule", "color": "#b8beb5", "strokeDash": [4, 4] },
+      "encoding": { "y": { "datum": 100 }, "color": { "value": "#b8beb5" } }
+    },
+    {
+      "transform": [{ "filter": "datum.year == 2023 && datum.state == 'NSW'" }],
+      "mark": { "type": "rule", "strokeDash": [2, 2], "strokeWidth": 1 },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "datum": 100.6 },
+        "y2": { "datum": 103.3 },
+        "color": { "value": "#9aa39b" }
+      }
+    },
+    {
+      "transform": [{ "filter": "datum.year == 2023 && datum.state == 'NSW'" }],
+      "mark": { "type": "text", "align": "center", "baseline": "bottom", "dy": -2, "fontSize": 10, "fontStyle": "italic", "fontWeight": "bold" },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "datum": 103.4 },
+        "text": { "value": "402M nights in 2023" },
+        "color": { "value": "#5c6b63" }
+      }
+    },
+    {
+      "mark": { "type": "line", "strokeWidth": 2.5, "point": { "filled": true, "size": 70 } },
+      "encoding": {
+        "detail": { "field": "state" },
+        "tooltip": [
+          { "field": "state_full", "type": "nominal", "title": "State/Territory" },
+          { "field": "year", "type": "ordinal", "title": "Year" },
+          { "field": "nights_m", "type": "quantitative", "title": "Visitor nights (M)", "format": ".1f" },
+          { "field": "index", "type": "quantitative", "title": "Index (2023 = 100)", "format": ".1f" }
+        ]
+      }
+    },
+    {
+      "transform": [
+        { "filter": "datum.year == 2024" },
+        { "calculate": "datum.state + '  ' + format(datum.nights_m, '.1f') + 'M'", "as": "endlabel" }
+      ],
+      "mark": { "type": "text", "align": "left", "dx": 10, "fontSize": 11, "fontWeight": "bold" },
+      "encoding": {
+        "text": { "field": "endlabel", "type": "nominal" },
+        "y": { "field": "label_y", "type": "quantitative" }
+      }
+    }
+  ],
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "view": { "stroke": null },
+    "title": { "anchor": "start", "font": "Inter", "fontSize": 15, "fontWeight": 600, "color": "#14543b", "subtitleColor": "#5c6b63", "subtitlePadding": 6, "offset": 12 },
+    "axis": { "labelFont": "Inter", "titleFont": "Inter", "titleColor": "#3a4a42", "labelColor": "#5c6b63", "titlePadding": 10, "grid": false },
+    "axisY": { "grid": true, "gridColor": "#eceae3" }
+  }
+}

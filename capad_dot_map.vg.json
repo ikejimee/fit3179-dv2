@@ -1,0 +1,36 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Location of Australia's national parks, 2024",
+    "subtitle": "Each dot is one of Australia's 1,413 national parks (CAPAD 2024), placed at its real location.",
+    "subtitleFontSize": 12
+  },
+  "width": "container",
+  "height": 520,
+  "projection": { "type": "conicEqualArea", "rotate": [-132, 0], "parallels": [-18, -36] },
+  "layer": [
+    {
+      "data": { "url": "data/au_states.topojson", "format": { "type": "topojson", "feature": "STE11aAust" } },
+      "transform": [{ "filter": "datum.properties.STATE_NAME !== 'Other Territories'" }],
+      "mark": { "type": "geoshape", "fill": "#eef0ec", "stroke": "white", "strokeWidth": 1 }
+    },
+    {
+      "data": { "url": "data/capad_national_parks.csv" },
+      "mark": { "type": "circle", "size": 55, "opacity": 0.6, "color": "#1b6b4f", "stroke": "#0e3b29", "strokeWidth": 0.3 },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "tooltip": [
+          { "field": "name", "type": "nominal", "title": "National park" },
+          { "field": "state", "type": "nominal", "title": "State/Territory" },
+          { "field": "area_ha", "type": "quantitative", "title": "Area (ha)", "format": ",.0f" }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "view": { "stroke": null },
+    "title": { "anchor": "start", "font": "Inter", "fontSize": 15, "fontWeight": 600, "color": "#14543b", "subtitleColor": "#5c6b63", "subtitlePadding": 6, "offset": 10 }
+  }
+}

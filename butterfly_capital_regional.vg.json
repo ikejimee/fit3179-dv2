@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Capital city vs regional visitor nights by state, 2024",
+    "subtitle": "Domestic overnight visitor nights (millions). Capital city on the left, regional on the right."
+  },
+  "width": "container",
+  "height": 400,
+  "data": { "url": "data/tourism_capital_regional.csv" },
+  "encoding": {
+    "y": {
+      "field": "state_full", "type": "nominal",
+      "sort": ["New South Wales", "Queensland", "Victoria", "Western Australia", "South Australia", "Tasmania", "Aust. Capital Territory", "Northern Territory"],
+      "title": null, "axis": { "labelFontSize": 12 }
+    },
+    "x": {
+      "field": "nights_signed", "type": "quantitative",
+      "title": "Visitor nights (millions)",
+      "scale": { "domain": [-38, 90] },
+      "axis": { "labelExpr": "abs(datum.value)" }
+    }
+  },
+  "layer": [
+    {
+      "mark": { "type": "bar", "height": 16 },
+      "encoding": {
+        "color": {
+          "field": "side", "type": "nominal", "title": null,
+          "scale": { "domain": ["Capital city", "Regional"], "range": ["#1366a0", "#2e8b57"] },
+          "legend": { "orient": "bottom" }
+        },
+        "tooltip": [
+          { "field": "state_full", "type": "nominal", "title": "State/Territory" },
+          { "field": "side", "type": "nominal", "title": "Where" },
+          { "field": "nights_m", "type": "quantitative", "title": "Visitor nights (M)", "format": ".1f" }
+        ]
+      }
+    },
+    {
+      "transform": [{ "filter": "datum.side == 'Regional' && datum.nights_m > 0" }],
+      "mark": { "type": "text", "align": "left", "dx": 4, "fontSize": 10, "color": "#3a4a42" },
+      "encoding": { "text": { "field": "nights_m", "type": "quantitative", "format": ".0f" } }
+    },
+    {
+      "transform": [{ "filter": "datum.side == 'Capital city' && datum.nights_m > 0" }],
+      "mark": { "type": "text", "align": "right", "dx": -4, "fontSize": 10, "color": "#3a4a42" },
+      "encoding": { "text": { "field": "nights_m", "type": "quantitative", "format": ".0f" } }
+    },
+    {
+      "mark": { "type": "rule", "color": "#9aa39b", "strokeWidth": 1 },
+      "encoding": { "x": { "datum": 0 } }
+    }
+  ],
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "view": { "stroke": null },
+    "title": { "anchor": "start", "font": "Inter", "fontSize": 15, "fontWeight": 600, "color": "#14543b", "subtitleColor": "#5c6b63", "subtitlePadding": 6, "offset": 12 },
+    "axis": { "labelFont": "Inter", "titleFont": "Inter", "titleColor": "#3a4a42", "labelColor": "#5c6b63", "titlePadding": 10, "grid": false },
+    "axisX": { "grid": true, "gridColor": "#eceae3" }
+  }
+}

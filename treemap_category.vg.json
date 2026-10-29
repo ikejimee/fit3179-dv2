@@ -1,0 +1,111 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Adventure activities grouped into families, sized by participation rate.",
+  "width": 760,
+  "height": 410,
+  "padding": 5,
+  "title": {
+    "text": "Adventure activities grouped by family, 2025",
+    "subtitle": "Participation rate (%) of adults, 2025. Tile size is participation; colour is the activity family.",
+    "anchor": "start",
+    "font": "Inter",
+    "fontSize": 15,
+    "fontWeight": 600,
+    "color": "#14543b",
+    "subtitleColor": "#5c6b63",
+    "subtitleFontSize": 12,
+    "offset": 10
+  },
+  "data": [
+    {
+      "name": "tree",
+      "url": "data/activity_tree.csv",
+      "format": { "type": "csv", "parse": { "rate": "number" } },
+      "transform": [
+        { "type": "nest", "keys": ["category"] },
+        {
+          "type": "treemap",
+          "field": "rate",
+          "sort": { "field": "value", "order": "descending" },
+          "round": true,
+          "method": "squarify",
+          "ratio": 1.6,
+          "paddingInner": 3,
+          "size": [{ "signal": "width" }, { "signal": "height" }]
+        }
+      ]
+    },
+    { "name": "nodes", "source": "tree", "transform": [{ "type": "filter", "expr": "datum.children" }] },
+    { "name": "leaves", "source": "tree", "transform": [{ "type": "filter", "expr": "!datum.children" }] }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": ["Land & trail", "Water", "Climbing & vertical"],
+      "range": ["#14543b", "#2e8b57", "#5aa47e"]
+    }
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "orient": "bottom",
+      "direction": "horizontal",
+      "title": "Activity family",
+      "titleFont": "Inter",
+      "labelFont": "Inter",
+      "titleColor": "#3a4a42",
+      "symbolType": "square",
+      "symbolSize": 150
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "from": { "data": "leaves" },
+      "encode": {
+        "enter": { "stroke": { "value": "white" }, "strokeWidth": { "value": 1.5 } },
+        "update": {
+          "x": { "field": "x0" }, "y": { "field": "y0" },
+          "x2": { "field": "x1" }, "y2": { "field": "y1" },
+          "fill": { "scale": "color", "field": "category" },
+          "tooltip": { "signal": "{'Activity': datum.activity, 'Family': datum.category, 'Participation (%)': format(datum.rate, '.2f')}" }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": { "data": "leaves" },
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "font": { "value": "Inter" }, "align": { "value": "left" }, "baseline": { "value": "top" },
+          "fill": { "value": "white" }, "fontSize": { "value": 12 }, "fontWeight": { "value": 600 }
+        },
+        "update": {
+          "x": { "field": "x0", "offset": 6 }, "y": { "field": "y0", "offset": 6 },
+          "text": { "field": "activity" },
+          "limit": { "signal": "datum.x1 - datum.x0 - 12" },
+          "opacity": { "signal": "(datum.x1 - datum.x0) > 55 && (datum.y1 - datum.y0) > 26 ? 1 : 0" }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": { "data": "leaves" },
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "font": { "value": "Inter" }, "align": { "value": "left" }, "baseline": { "value": "top" },
+          "fill": { "value": "#eafaf1" }, "fontSize": { "value": 11 }
+        },
+        "update": {
+          "x": { "field": "x0", "offset": 6 }, "y": { "field": "y0", "offset": 24 },
+          "text": { "signal": "format(datum.rate, '.1f') + '%'" },
+          "opacity": { "signal": "(datum.x1 - datum.x0) > 70 && (datum.y1 - datum.y0) > 44 ? 1 : 0" }
+        }
+      }
+    }
+  ],
+  "config": { "font": "Inter, system-ui, sans-serif" }
+}

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Percentage change in visitor nights by state, 2023 to 2024",
+    "subtitle": "Domestic overnight visitor nights, percentage change by state."
+  },
+  "width": "container",
+  "height": 360,
+  "data": { "url": "data/tourism_change.csv" },
+  "encoding": {
+    "y": {
+      "field": "state_full", "type": "nominal",
+      "sort": { "field": "pct_change", "order": "descending" },
+      "title": null, "axis": { "labelFontSize": 12 }
+    },
+    "x": {
+      "field": "pct_change", "type": "quantitative",
+      "title": "Change in visitor nights, 2023 to 2024 (%)",
+      "scale": { "domain": [-23, 10] }
+    }
+  },
+  "layer": [
+    {
+      "mark": { "type": "rule", "color": "#b8beb5", "strokeDash": [3, 3] },
+      "encoding": { "x": { "datum": 0 } }
+    },
+    {
+      "mark": { "type": "rule", "strokeWidth": 2.5, "color": "#c7ccc6" },
+      "encoding": { "x2": { "datum": 0 } }
+    },
+    {
+      "mark": { "type": "point", "filled": true, "size": 170, "opacity": 1 },
+      "encoding": {
+        "color": {
+          "field": "direction", "type": "nominal", "title": null,
+          "scale": { "domain": ["Grew", "Declined"], "range": ["#2e8b57", "#1366a0"] },
+          "legend": { "orient": "bottom-right", "symbolSize": 150 }
+        },
+        "tooltip": [
+          { "field": "state_full", "type": "nominal", "title": "State/Territory" },
+          { "field": "pct_change", "type": "quantitative", "title": "Change in nights (%)", "format": "+.2f" }
+        ]
+      }
+    },
+    {
+      "transform": [{ "filter": "datum.pct_change >= 0" }],
+      "mark": { "type": "text", "fontSize": 11, "fontWeight": "bold", "color": "#3a4a42", "align": "left", "dx": 12 },
+      "encoding": { "text": { "field": "pct_change", "type": "quantitative", "format": "+.1f" } }
+    },
+    {
+      "transform": [{ "filter": "datum.pct_change < 0" }],
+      "mark": { "type": "text", "fontSize": 11, "fontWeight": "bold", "color": "#3a4a42", "align": "right", "dx": -12 },
+      "encoding": { "text": { "field": "pct_change", "type": "quantitative", "format": ".1f" } }
+    }
+  ],
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "view": { "stroke": null },
+    "title": { "anchor": "start", "font": "Inter", "fontSize": 15, "fontWeight": 600, "color": "#14543b", "subtitleColor": "#5c6b63", "subtitlePadding": 6, "offset": 12 },
+    "axis": { "labelFont": "Inter", "titleFont": "Inter", "titleColor": "#3a4a42", "labelColor": "#5c6b63", "titlePadding": 10, "grid": false },
+    "axisX": { "grid": true, "gridColor": "#eceae3" }
+  }
+}

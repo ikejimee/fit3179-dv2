@@ -1,0 +1,81 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Total protected area by state, 2024",
+    "subtitle": "Total terrestrial protected area, 2024. Circle size is area protected. Label shows the share of the state that is protected.",
+    "subtitleFontSize": 12
+  },
+  "width": "container",
+  "height": 520,
+  "projection": { "type": "conicEqualArea", "rotate": [-132, 0], "parallels": [-18, -36] },
+  "layer": [
+    {
+      "data": { "url": "data/au_states.topojson", "format": { "type": "topojson", "feature": "STE11aAust" } },
+      "transform": [{ "filter": "datum.properties.STATE_NAME !== 'Other Territories'" }],
+      "mark": { "type": "geoshape", "fill": "#eef0ec", "stroke": "white", "strokeWidth": 1 }
+    },
+    {
+      "data": { "url": "data/capad_state_totals.csv" },
+      "mark": { "type": "circle", "opacity": 0.7, "stroke": "#14543b", "strokeWidth": 1 },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "size": {
+          "field": "area_mha", "type": "quantitative",
+          "title": "Protected area (million ha)",
+          "scale": { "type": "linear", "domain": [0, 80], "range": [40, 3200] },
+          "legend": { "orient": "top-left", "format": ".0f", "titleFontSize": 11, "values": [10, 30, 80] }
+        },
+        "color": { "value": "#2e8b57" },
+        "tooltip": [
+          { "field": "state_full", "type": "nominal", "title": "State/Territory" },
+          { "field": "area_mha", "type": "quantitative", "title": "Protected area (M ha)", "format": ".1f" },
+          { "field": "pct_protected", "type": "quantitative", "title": "Share of state protected (%)", "format": ".1f" },
+          { "field": "count", "type": "quantitative", "title": "Number of protected areas" }
+        ]
+      }
+    },
+    {
+      "data": { "url": "data/capad_state_totals.csv" },
+      "mark": { "type": "text", "fontSize": 11, "fontWeight": "bold", "stroke": "white", "strokeWidth": 3, "dy": -2 },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "text": { "field": "state", "type": "nominal" }
+      }
+    },
+    {
+      "data": { "url": "data/capad_state_totals.csv" },
+      "mark": { "type": "text", "fontSize": 11, "fontWeight": "bold", "fill": "#14402e", "dy": -2 },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "text": { "field": "state", "type": "nominal" }
+      }
+    },
+    {
+      "data": { "url": "data/capad_state_totals.csv" },
+      "mark": { "type": "text", "fontSize": 10, "dy": 12, "stroke": "white", "strokeWidth": 3 },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "text": { "field": "pct_protected", "type": "quantitative", "format": ".0f" }
+      }
+    },
+    {
+      "data": { "url": "data/capad_state_totals.csv" },
+      "mark": { "type": "text", "fontSize": 10, "dy": 12, "fill": "#2e2a22" },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "text": { "field": "pct_protected", "type": "quantitative", "format": ".0f" }
+      }
+    }
+  ],
+  "config": {
+    "font": "Inter, system-ui, sans-serif",
+    "view": { "stroke": null },
+    "title": { "anchor": "start", "font": "Inter", "fontSize": 15, "fontWeight": 600, "color": "#14543b", "subtitleColor": "#5c6b63", "subtitlePadding": 6, "offset": 10 },
+    "legend": { "labelFont": "Inter", "titleFont": "Inter", "titleColor": "#3a4a42" }
+  }
+}
