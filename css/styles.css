@@ -158,6 +158,25 @@ body {
   line-height: 1.55;
   color: #35433b;
 }
+
+/* ===== What we see / Why explanation blocks (below each chart) ===== */
+.explain { margin: 20px 0 2px; max-width: 900px; }
+.explain h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  margin: 16px 0 6px;
+}
+.explain h4:first-child { margin-top: 0; }
+.explain p {
+  margin: 0 0 10px;
+  color: #35433b;
+  font-size: 0.97rem;
+  line-height: 1.62;
+}
 .insight h3 {
   font-family: "Inter", sans-serif;
   font-size: 0.78rem;
@@ -192,6 +211,9 @@ body {
 .hl-tas  { color: var(--ink); font-weight: 700; }
 .hl-men  { color: #3f5c82; font-weight: 700; }
 .hl-women{ color: #7e5ca0; font-weight: 700; }
+/* Tourism grew/declined, matching the slope and lollipop colours */
+.hl-grew { color: #2e8b57; font-weight: 700; }
+.hl-decl { color: #1366a0; font-weight: 700; }
 
 /* ===== Footer ===== */
 footer {
