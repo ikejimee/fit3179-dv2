@@ -1,0 +1,17 @@
+state,state_full,side,nights_m,nights_signed,total_m
+NSW,New South Wales,Regional,82.89,82.89,114.56
+NSW,New South Wales,Capital city,31.66,-31.66,114.56
+QLD,Queensland,Regional,73.66,73.66,99.26
+QLD,Queensland,Capital city,25.6,-25.6,99.26
+VIC,Victoria,Regional,51.74,51.74,80.8
+VIC,Victoria,Capital city,29.05,-29.05,80.8
+WA,Western Australia,Regional,34.42,34.42,49.53
+WA,Western Australia,Capital city,15.12,-15.12,49.53
+SA,South Australia,Regional,14.35,14.35,25.93
+SA,South Australia,Capital city,11.58,-11.58,25.93
+TAS,Tasmania,Regional,6.69,6.69,12.4
+TAS,Tasmania,Capital city,5.71,-5.71,12.4
+ACT,Aust. Capital Territory,Regional,0.0,0.0,7.54
+ACT,Aust. Capital Territory,Capital city,7.54,-7.54,7.54
+NT,Northern Territory,Regional,3.69,3.69,7.38
+NT,Northern Territory,Capital city,3.69,-3.69,7.38

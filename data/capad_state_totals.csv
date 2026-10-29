@@ -1,0 +1,9 @@
+state,state_full,count,area_ha,area_mha,pct_protected,lon,lat
+NSW,New South Wales,2657,8365055.8,8.365,10.4,147.0,-32.0
+VIC,Victoria,4709,4023548.4,4.024,17.7,144.3,-36.8
+QLD,Queensland,1230,16183152.7,16.183,9.4,144.5,-22.6
+SA,South Australia,2085,29963518.5,29.964,30.4,135.3,-30.2
+WA,Western Australia,1888,78674218.9,78.674,31.1,122.3,-25.6
+TAS,Tasmania,1721,2928054.8,2.928,42.8,146.7,-42.0
+ACT,Australian Capital Territory,51,131902.4,0.132,55.9,149.0,-35.5
+NT,Northern Territory,84,33208738.0,33.209,24.6,133.4,-19.6

@@ -1,0 +1,17 @@
+state,state_full,year,nights_m,index,label_y,direction
+NSW,New South Wales,2023,117.09,100.0,100.0,Declined
+NSW,New South Wales,2024,114.56,97.84,96.8,Declined
+VIC,Victoria,2023,83.47,100.0,100.0,Declined
+VIC,Victoria,2024,80.8,96.8,95.5,Declined
+QLD,Queensland,2023,97.14,100.0,100.0,Grew
+QLD,Queensland,2024,99.26,102.18,102.2,Grew
+SA,South Australia,2023,25.78,100.0,100.0,Grew
+SA,South Australia,2024,25.93,100.57,100.6,Grew
+WA,Western Australia,2023,50.14,100.0,100.0,Declined
+WA,Western Australia,2024,49.53,98.79,99.3,Declined
+TAS,Tasmania,2023,12.59,100.0,100.0,Declined
+TAS,Tasmania,2024,12.4,98.52,98.1,Declined
+NT,Northern Territory,2023,6.94,100.0,100.0,Grew
+NT,Northern Territory,2024,7.38,106.42,106.42,Grew
+ACT,Aust. Capital Territory,2023,9.26,100.0,100.0,Declined
+ACT,Aust. Capital Territory,2024,7.54,81.41,81.41,Declined
