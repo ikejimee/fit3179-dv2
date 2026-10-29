@@ -30,26 +30,6 @@
       "encoding": { "y": { "datum": 100 }, "color": { "value": "#b8beb5" } }
     },
     {
-      "transform": [{ "filter": "datum.year == 2023 && datum.state == 'NSW'" }],
-      "mark": { "type": "rule", "strokeDash": [2, 2], "strokeWidth": 1 },
-      "encoding": {
-        "x": { "field": "year", "type": "ordinal" },
-        "y": { "datum": 100.6 },
-        "y2": { "datum": 103.3 },
-        "color": { "value": "#9aa39b" }
-      }
-    },
-    {
-      "transform": [{ "filter": "datum.year == 2023 && datum.state == 'NSW'" }],
-      "mark": { "type": "text", "align": "center", "baseline": "bottom", "dy": -2, "fontSize": 10, "fontStyle": "italic", "fontWeight": "bold" },
-      "encoding": {
-        "x": { "field": "year", "type": "ordinal" },
-        "y": { "datum": 103.4 },
-        "text": { "value": "402M nights in 2023" },
-        "color": { "value": "#5c6b63" }
-      }
-    },
-    {
       "mark": { "type": "line", "strokeWidth": 2.5, "point": { "filled": true, "size": 70 } },
       "encoding": {
         "detail": { "field": "state" },
