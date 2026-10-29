@@ -10,7 +10,7 @@
   "encoding": {
     "y": {
       "field": "state_full", "type": "nominal",
-      "sort": { "field": "pct_change", "order": "descending" },
+      "sort": ["Northern Territory", "Queensland", "South Australia", "Western Australia", "Tasmania", "New South Wales", "Victoria", "Aust. Capital Territory"],
       "title": null, "axis": { "labelFontSize": 12 }
     },
     "x": {
