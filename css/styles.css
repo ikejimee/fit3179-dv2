@@ -214,6 +214,10 @@ body {
 /* Tourism grew/declined, matching the slope and lollipop colours */
 .hl-grew { color: #2e8b57; font-weight: 700; }
 .hl-decl { color: #1366a0; font-weight: 700; }
+/* Activity families, matching the treemap colours */
+.hl-land  { color: #117733; font-weight: 700; }
+.hl-water { color: #0072B2; font-weight: 700; }
+.hl-climb { color: #c0560e; font-weight: 700; }
 
 /* ===== Footer ===== */
 footer {
